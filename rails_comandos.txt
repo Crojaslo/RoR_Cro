@@ -1,0 +1,78 @@
+Antes de comenzar un proyecto debemos verificar estar en la terminal con ubuntu
+ssh -p 2222 inforcap@127.0.0.1
+
+-- crear un proyecto rails
+
+rails new demo -d postgresql
+o
+rails new demo -- database postgresql
+
+--
+
+
+--ejecutar creacion de base datos
+rails db:create
+rails db -> para acceder desde las terminal a la base de datos
+
+--Desplegando el servidor
+rails servidor
+
+--Probar en el browser
+http://127.0.0.1:3000
+
+-- Actualizar o instalar una gema, se ejecuta dentro del proyecto
+bundle install o bundle
+
+-- Crear un controlador
+
+- welcome = welcome_controller.rb , controlador y una carpeta llamada welcome
+- index -> es un método en el controlador y una página llamada index.htlm.erb
+
+rails generate controller welcome index
+rails g controller welcome index
+
+create  app/controllers/welcome_controller.rb
+create    app/views/welcome
+create    app/views/welcome/index.html.erb
+
+
+
+
+
+
+
+app
+        assets/images
+        assets/css
+        controllers/
+        javascript/
+        models/
+        views/
+
+config
+        database.yml
+        routes.rb   --- se encontrará controller/metodo
+
+db
+        migration/  -- nos sirven para crear las tablas en la base de datos
+        seed.rb
+
+---------------------------------------------------
+
+**agregar bootstrap como gema al proyecto
+gem install bootstrap
+gem install jquery-rails
+
+** agregamos la gema al Gemfile y ejecuta un bundle install
+bundle add bootstrap
+bundle add jquery-rails o gem 'jquery-rails'
+
+**cambiar el nombre application.css a application.scss
+
+** agregar en application.scss la linea
+@import "bootstrap";
+
+** agregar a application.js 
+//= require jquery3
+//= require popper
+//= require bootstrap
