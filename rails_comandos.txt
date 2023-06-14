@@ -29,8 +29,9 @@ bundle install o bundle
 - index -> es un método en el controlador y una página llamada index.htlm.erb
 
 rails generate controller welcome index
-rails g controller welcome index
+rails g controller welcome index    =  welcome = nombre de carpeta ... index = método
 
+Imprime=>
 create  app/controllers/welcome_controller.rb
 create    app/views/welcome
 create    app/views/welcome/index.html.erb
@@ -59,20 +60,31 @@ db
 
 ---------------------------------------------------
 
+*** BOOTSTRAP ***
+
 **agregar bootstrap como gema al proyecto
 gem install bootstrap
 gem install jquery-rails
+gem install popper_js
 
 ** agregamos la gema al Gemfile y ejecuta un bundle install
 bundle add bootstrap
-bundle add jquery-rails o gem 'jquery-rails'
+bundle add jquery-rails
+bundle add popper_js
 
-**cambiar el nombre application.css a application.scss
+**cambiar el nombre 
+application.css a application.scss
 
 ** agregar en application.scss la linea
 @import "bootstrap";
 
 ** agregar a application.js 
-//= require jquery3
-//= require popper
-//= require bootstrap
+import "popper"
+import "bootstrap"
+
+**agregar en initializers/config/assets.rb
+Rails.application.config.assets.precompile += %w( application.scss bootstrap.min.js popper.js )
+
+**agregar en config/importmap.rb
+pin "popper", to: 'popper.js', preload: true
+pin "bootstrap", to: 'bootstrap.min.js', preload: true

@@ -1,4 +1,4 @@
-*** BOOTSTRAP ***
+*** BOOTSTRAP *** ### ESTOY UTILIZANDO ###
 
 **agregar bootstrap como gema al proyecto
 gem install bootstrap
@@ -26,3 +26,26 @@ Rails.application.config.assets.precompile += %w( application.scss bootstrap.min
 **agregar en config/importmap.rb
 pin "popper", to: 'popper.js', preload: true
 pin "bootstrap", to: 'bootstrap.min.js', preload: true
+
+
+
+
+##### OTRO MÉTODO ######
+
+**agregar bootstrap como gema al proyecto
+gem install bootstrap
+gem install jquery-rails
+
+** agregamos la gema al Gemfile y ejecuta un bundle install
+bundle add bootstrap
+bundle add jquery-rails  o  gem 'jquery-rails'
+
+**cambiar el nombre application.css a application.scss
+
+** agregar en application.scss la linea
+@import "bootstrap";
+
+** agregar a application.js 
+//= require jquery3
+//= require popper
+//= require bootstrap
